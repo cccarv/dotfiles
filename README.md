@@ -13,3 +13,6 @@ How to use:
 To make it default on Openbox when SO start:
     - Put this command into ~/.config/openbox/autostart
     bash ~/.config/polybar/launch.sh
+
+To refresh polybar:
+    polybar-msg cmd restart 
