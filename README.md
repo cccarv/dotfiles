@@ -29,6 +29,8 @@
 ```
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
+* [OpenWeather API Key](https://openweathermap.org/)
+
 ## 🚀 Installing
 
 * Place all files into ~/.config/polybar/
@@ -37,6 +39,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 ```
 ~/.config/polybar/gmail/auth.py
 ```
+* Insert your Openweather api key into `~/.config/polybar/scripts/openweathermap-fullfeatured.sh`
 * Done.
 
 ## ☕ Usefull info
