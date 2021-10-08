@@ -1,5 +1,5 @@
 # update mirrorlist
-reflector -c Brazil -a 3 --sort rate /etc/pacman.d/mirrorlist
+reflector -c Brazil -a 3 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Install graphic card
 
