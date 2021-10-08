@@ -1,0 +1,95 @@
+# update mirrorlist
+reflector -c Brazil -a 3 --sort rate /etc/pacman.d/mirrorlist
+
+# Install graphic card
+
+sudo pacman -S nvidia nvidia-utils nvidia-settings
+
+# Install display manager
+
+sudo pacman -S xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano
+
+# Create bswpm and sxhkd dirs
+
+mkdir -p .config/bspwm .config/sxhkd
+
+# copy configs files for bspwm and sxhkd
+
+cp /usr/share/doc/bspwm/examples/bspwmrc .config/bspwm
+cp /usr/share/doc/bspwm/examples/sxhkdrc .config/sxhkd
+
+# configure sxhkdrc to use the terminal installed
+
+nano .config/sxhkd/sxhkdrc
+
+# enable lightdm
+sudo systemctl enable enable lightdm 
+
+# edit .config/bspwm/bspwmrc adding this:
+
+setxkbmap -model abnt2 -layout br -variant abnt2 &
+picom -f &
+
+# fix screen res
+Win Spacebar
+arandr
+
+Save the script then:
+chmod +x .screenlayout/display.sh
+
+Add this line to .config/bspwm/bspwmrc
+$HOME/.screenlayout/display.sh
+
+# Fix the cursor - Add this line to bspwmrc
+xsetroot -cursor_name left_ptr
+
+# Fix wallpaper with Nitrogen and add this line to .bspwmrc
+nitrogen --restore &
+
+# Fix keybinds
+git clone https://github.com/cccarv/dotfiles
+cp dotfiles/sxhkd/sxhkdrc .config/sxhkd/sxhkdrc
+
+# Install yay aur packmanager
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+# Spotify wm fix
+git clone https://aur.archlinux.org/spotifywm-git.git
+cd spotifywm-git
+makepkg -si
+
+ Install polybar
+git clone https://aur.archlinux.org/polybar-git.gi
+cd polybar-git
+makepkg -si
+
+ Install fonts
+git clone https://aur.archlinux.org/nerd-fonts-complete.git
+cd nerd-fonts-complete
+makepkg -si
+
+# Configure and run polybar
+mkdir .config/polybar
+cp /usr/share/doc/polybar/examples/config.ini .config/polybar/
+Edit the file and change from [bar/example] to [bar/main]
+nano .config/polybar/launch.sh
+
+>>>
+#!/usr/bin/env bash
+
+DIR="$HOME/.config/polybar"
+
+killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+polybar -q main -c "$DIR"/config.ini &
+>>>
+
+chmod +x .config/polybar/launch.sh
+
+Add to bspwmrc:
+$HOME/.config/polybar/launch.sh
+
+
