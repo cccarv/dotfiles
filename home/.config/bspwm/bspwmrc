@@ -34,7 +34,7 @@ workspaces() {
 workspaces
 
 bspc config border_width 0
-bspc config border_radius 50
+bspc config border_radius 10
 bspc config window_gap 5
 bspc config split_ratio 0.50
 
@@ -61,8 +61,8 @@ bspc rule -a Alacritty desktop='^1' follow=on focus=on
 bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
 
 # 2 > web
-bspc rule -a firefox desktop='^2' follow=on focus=on
-bspc rule -a chromium desktop='^2' follow=on focus=on
+# bspc rule -a firefox desktop='^2' follow=on focus=on
+# bspc rule -a chromium desktop='^2' follow=on focus=on
 
 # 3 > files
 declare -a files=(Pcmanfm Thunar qBittorrent)

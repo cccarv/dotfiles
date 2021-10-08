@@ -4,7 +4,7 @@ sudo reflector --latest 50 --protocol http,https --sort rate --save /etc/pacman.
 sudo pacman -Syy --noconfirm
 sudo pacman -Syu --noconfirm
 
-sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager feh geany jq iwd networkmanager network-manager-applet
+sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager feh geany jq iwd networkmanager network-manager-applet thunar
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -44,6 +44,7 @@ cd ~/.
 rm -rf networkmanager-dmenu-git
 
 mkdir -p .config/del
+cp dotfiles/home/.config/polybar/config-laptop.ini dotfiles/home/.config/polybar/config.ini
 cp -r dotfiles/home/.config/* .config/
 cp -r dotfiles/home/.Xresources* .
 
