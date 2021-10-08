@@ -46,6 +46,10 @@ mkdir -p Pictures/Wallpapers
 cp dotfiles/wallpaper/* Picures/Wallpapers/
 feh --bg-scale ~/Picures/Wallpapers/turquoise.png
 
+sudo cp dotfiles/lightdm.conf /etc/lightdm/lightdm.conf
+sudo groupadd -r autologin
+sudo gpasswd -a carlos autologin
+
 rm -rf dotfiles
 rm -rf myarch.sh
 
