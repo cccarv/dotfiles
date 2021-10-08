@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pacman -S --noconfirm reflector
-sudo reflector -c Brazil -a 3 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --latest 200 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syy
 
 sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager feh geany jq
