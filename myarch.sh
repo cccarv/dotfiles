@@ -36,9 +36,17 @@ sudo make install
 cd ~/
 rm -rf ksuperkey
 
+mkdir -p .config/del
 cp -r dotfiles/home/.config/* .config/
+cp -r dotfiles/home/.Xresources* .
 
 sudo systemctl enable lightdm
 
+mkdir -p Pictures/Wallpapers
+cp dotfiles/wallpaper/* Picures/Wallpapers/
+nitrogen ~/Picures/Wallpapers/turquoise.png
+
 rm -rf dotfiles
 rm -rf myarch.sh
+
+reboot
