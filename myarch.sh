@@ -3,7 +3,7 @@ sudo pacman -S --noconfirm reflector
 sudo reflector -c Brazil -a 3 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syy
 
-sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky ksuperkey xfce4-power-manager
+sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -17,7 +17,7 @@ makepkg -si
 cd ~/
 rm -rf spotifywm-git
 
-git clone https://aur.archlinux.org/polybar-git.gi
+git clone https://aur.archlinux.org/polybar-git.git
 cd polybar-git
 makepkg -si
 cd ~/
@@ -29,10 +29,8 @@ makepkg -si
 cd ~/
 rm -rf nerd-fonts-complete
 
-mkdir .config
-
-git clone https://github.com/cccarv/dotfiles
 cp -r dotfiles/home/.config/* .config/
 
 sudo systemctl enable enable lightdm
 
+sudo pacman -S -noconfirm ksuperkey
