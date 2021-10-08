@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pacman -S --noconfirm reflector
-sudo reflector --latest 200 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --latest 50 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syy --noconfirm
 sudo pacman -Syu --noconfirm
 
