@@ -4,7 +4,7 @@ sudo reflector --latest 50 --protocol http,https --sort rate --save /etc/pacman.
 sudo pacman -Syy --noconfirm
 sudo pacman -Syu --noconfirm
 
-sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager feh geany jq iwd
+sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager feh geany jq iwd networkmanager network-manager-applet
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -36,6 +36,12 @@ make
 sudo make install
 cd ~/
 rm -rf ksuperkey
+
+git clone https://aur.archlinux.org/networkmanager-dmenu-git.git
+cd networkmanager-dmenu-git
+makepkg -si --noconfirm
+cd ~/.
+rm -rf networkmanager-dmenu-git
 
 mkdir -p .config/del
 cp -r dotfiles/home/.config/* .config/
