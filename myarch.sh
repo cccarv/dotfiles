@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo pacman -S --nocofirm reflector
 sudo reflector -c Brazil -a 3 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syy
 
