@@ -48,6 +48,13 @@ cp dotfiles/home/.config/polybar/config-laptop.ini dotfiles/home/.config/polybar
 cp -r dotfiles/home/.config/* .config/
 cp -r dotfiles/home/.Xresources* .
 
+git clone https://github.com/dylanaraps/bspwm
+cd bspwm
+make
+sudo make install
+cd ~/.
+rm -rf bspwm
+
 sudo systemctl enable lightdm
 
 mkdir -p Pictures/Wallpapers
