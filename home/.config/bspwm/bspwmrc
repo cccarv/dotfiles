@@ -139,11 +139,14 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 # Enable power management
 xfce4-power-manager &
 
+# Set keyboard
+setxkbmap -model abnt2 -layout br -variant abnt2 &
+
 # Fix cursor
 xsetroot -cursor_name left_ptr
 
 # fix display
-xrandr --output DVI-D-0 --off --output HDMI-0 --off --output HDMI-1 --off --output DP-0 --mode 2560x1440 --pos 0x0 --rotate right --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --rate 144 --pos 1440x665 --rotate normal --output DP-3 --off
+#xrandr --output DVI-D-0 --off --output HDMI-0 --off --output HDMI-1 --off --output DP-0 --mode 2560x1440 --pos 0x0 --rotate right --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --rate 144 --pos 1440x665 --rotate normal --output DP-3 --off
 
 # Restore wallpaper
 #bash $HOME/.fehbg

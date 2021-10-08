@@ -7,7 +7,7 @@ sudo pacman -S nvidia nvidia-utils nvidia-settings
 
 # Install display manager
 
-sudo pacman -S xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano
+sudo pacman -S xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano thunar geany 
 
 # Create bswpm and sxhkd dirs
 

@@ -3,7 +3,7 @@
 sudo reflector -c Brazil -a 3 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syy
 
-sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano
+sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky ksuperkey xfce4-power-manager
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -29,7 +29,10 @@ makepkg -si
 cd ~/
 rm -rf nerd-fonts-complete
 
-mkdir -p .config/bspwm .config/sxhkd
+mkdir .config
 
 git clone https://github.com/cccarv/dotfiles
-cp -r ~/dotfiles/.config/bspwm ~/.config/bspwm
+cp -r dotfiles/home/.config/* .config/
+
+sudo systemctl enable enable lightdm
+
