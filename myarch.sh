@@ -1,9 +1,10 @@
 #!/bin/bash
 sudo pacman -S --noconfirm reflector
 sudo reflector --latest 200 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -Syy
+sudo pacman -Syy --noconfirm
+sudo pacman -Syu --noconfirm
 
-sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager feh geany jq
+sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm lightdm-gtk-greeter bspwm sxhkd dmenu nitrogen picom alacritty chromium arandr nano dunst rofi conky xfce4-power-manager feh geany jq iwd
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
