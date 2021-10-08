@@ -7,25 +7,25 @@ sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings xorg lightdm ligh
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+makepkg -si --noconfirm
 cd ~/
 rm -rf yay
 
 git clone https://aur.archlinux.org/spotifywm-git.git
 cd spotifywm-git
-makepkg -si
+makepkg -si --noconfirm
 cd ~/
 rm -rf spotifywm-git
 
 git clone https://aur.archlinux.org/polybar-git.git
 cd polybar-git
-makepkg -si
+makepkg -si --noconfirm
 cd ~/
 rm -rf polybar-git
 
 git clone https://aur.archlinux.org/nerd-fonts-complete.git
 cd nerd-fonts-complete
-makepkg -si
+makepkg -si --noconfirm
 cd ~/
 rm -rf nerd-fonts-complete
 
