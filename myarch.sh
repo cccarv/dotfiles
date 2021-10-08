@@ -29,8 +29,16 @@ makepkg -si
 cd ~/
 rm -rf nerd-fonts-complete
 
+git clone https://github.com/hanschen/ksuperkey.git
+cd ksuperkey
+make
+sudo make install
+cd ~/
+rm -rf ksuperkey
+
 cp -r dotfiles/home/.config/* .config/
 
-sudo systemctl enable enable lightdm
+sudo systemctl enable lightdm
 
-sudo pacman -S -noconfirm ksuperkey
+rm -rf dotfiles
+rm -rf myarch.sh
