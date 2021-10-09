@@ -65,6 +65,17 @@ sudo cp dotfiles/lightdm.conf /etc/lightdm/lightdm.conf
 sudo groupadd -r autologin
 sudo gpasswd -a carlos autologin
 
+sudo pacman -Syu --noconfirm
+sudo yay -Syu --noconfirm
+sudo pacman -Sc --noconfirm
+sudo yay -Sc --noconfirm
+sudo yay -Yc --noconfirm
+sudo pacman -Qdtq | sudo pacman -Rns
+rm -rf .cache/*
+sudo journalctl --vacumm-time=2weeks
+
+
+
 rm -rf dotfiles
 rm -rf myarch.sh
 
